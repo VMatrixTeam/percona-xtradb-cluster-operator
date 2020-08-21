@@ -76,19 +76,19 @@ spec:
           valueFrom:
             secretKeyRef:
               key: operator
-              name: my-cluster-secrets
+              name: internal-custom
         - name: PROXY_ADMIN_USER
           value: proxyadmin
         - name: PROXY_ADMIN_PASSWORD
           valueFrom:
             secretKeyRef:
               key: proxyadmin
-              name: my-cluster-secrets
+              name: internal-custom
         - name: MONITOR_PASSWORD
           valueFrom:
             secretKeyRef:
               key: monitor
-              name: my-cluster-secrets
+              name: internal-custom
         imagePullPolicy: Always
         name: proxysql
         ports:
@@ -125,19 +125,19 @@ spec:
           valueFrom:
             secretKeyRef:
               key: operator
-              name: my-cluster-secrets
+              name: internal-custom
         - name: PROXY_ADMIN_USER
           value: proxyadmin
         - name: PROXY_ADMIN_PASSWORD
           valueFrom:
             secretKeyRef:
               key: proxyadmin
-              name: my-cluster-secrets
+              name: internal-custom
         - name: MONITOR_PASSWORD
           valueFrom:
             secretKeyRef:
               key: monitor
-              name: my-cluster-secrets
+              name: internal-custom
         imagePullPolicy: Always
         name: pxc-monit
         resources: {}
@@ -154,19 +154,19 @@ spec:
           valueFrom:
             secretKeyRef:
               key: operator
-              name: my-cluster-secrets
+              name: internal-custom
         - name: PROXY_ADMIN_USER
           value: proxyadmin
         - name: PROXY_ADMIN_PASSWORD
           valueFrom:
             secretKeyRef:
               key: proxyadmin
-              name: my-cluster-secrets
+              name: internal-custom
         - name: MONITOR_PASSWORD
           valueFrom:
             secretKeyRef:
               key: monitor
-              name: my-cluster-secrets
+              name: internal-custom
         imagePullPolicy: Always
         name: proxysql-monit
         resources: {}

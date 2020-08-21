@@ -38,19 +38,19 @@ spec:
           valueFrom:
             secretKeyRef:
               key: operator
-              name: my-cluster-secrets
+              name: internal-side-car
         - name: PROXY_ADMIN_USER
           value: proxyadmin
         - name: PROXY_ADMIN_PASSWORD
           valueFrom:
             secretKeyRef:
               key: proxyadmin
-              name: my-cluster-secrets
+              name: internal-side-car
         - name: MONITOR_PASSWORD
           valueFrom:
             secretKeyRef:
               key: monitor
-              name: my-cluster-secrets
+              name: internal-side-car
         imagePullPolicy: Always
         name: proxysql
         ports:
@@ -84,19 +84,19 @@ spec:
           valueFrom:
             secretKeyRef:
               key: operator
-              name: my-cluster-secrets
+              name: internal-side-car
         - name: PROXY_ADMIN_USER
           value: proxyadmin
         - name: PROXY_ADMIN_PASSWORD
           valueFrom:
             secretKeyRef:
               key: proxyadmin
-              name: my-cluster-secrets
+              name: internal-side-car
         - name: MONITOR_PASSWORD
           valueFrom:
             secretKeyRef:
               key: monitor
-              name: my-cluster-secrets
+              name: internal-side-car
         imagePullPolicy: Always
         name: pxc-monit
         resources:
@@ -119,19 +119,19 @@ spec:
           valueFrom:
             secretKeyRef:
               key: operator
-              name: my-cluster-secrets
+              name: internal-side-car
         - name: PROXY_ADMIN_USER
           value: proxyadmin
         - name: PROXY_ADMIN_PASSWORD
           valueFrom:
             secretKeyRef:
               key: proxyadmin
-              name: my-cluster-secrets
+              name: internal-side-car
         - name: MONITOR_PASSWORD
           valueFrom:
             secretKeyRef:
               key: monitor
-              name: my-cluster-secrets
+              name: internal-side-car
         imagePullPolicy: Always
         name: proxysql-monit
         resources:
