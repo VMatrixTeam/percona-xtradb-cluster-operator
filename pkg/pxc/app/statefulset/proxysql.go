@@ -108,7 +108,7 @@ func (c *Proxy) AppContainer(spec *api.PodSpec, secrets string, cr *api.PerconaX
 		SecurityContext: spec.ContainerSecurityContext,
 	}
 
-	if cr.CompareVersionWith("1.5.0") >= 0 {
+	if cr.CompareVersionWith("1.6.0") >= 0 {
 		secretName := "internal-" + cr.Name
 		appc.Env[1] = corev1.EnvVar{
 			Name: "OPERATOR_PASSWORD",
@@ -279,6 +279,9 @@ func (c *Proxy) SidecarContainers(spec *api.PodSpec, secrets string, cr *api.Per
 
 func (c *Proxy) PMMContainer(spec *api.PMMSpec, secrets string, cr *api.PerconaXtraDBCluster) (corev1.Container, error) {
 	ct := app.PMMClient(spec, secrets, cr.CompareVersionWith("1.2.0") >= 0)
+	if cr.CompareVersionWith("1.6.0") >= 0 {
+		secrets = "internal-" + cr.Name
+	}
 
 	pmmEnvs := []corev1.EnvVar{
 		{
